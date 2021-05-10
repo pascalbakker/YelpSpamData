@@ -9,6 +9,7 @@ body{
 	color: white;
 	text-align: center;
 	background: #151515;
+    padding-bottom: 100px;
 }
 #main{
 	max-width: 50em;
@@ -49,6 +50,11 @@ text-indent: 40px;
 	margin-left: 2em;
 	font-size: 1.5em;
 }
+code{
+    text-align: left;
+    color: lime;
+    background-color: black;
+}
 </style>
 <body>
 	<div id="main">
@@ -71,11 +77,22 @@ text-indent: 40px;
 	<p> </p>
 	<img style="width: 500px;" src="img1.png"/>
 	<h2 id="subheader"><i>3. Methodology</i></h2>
+    <h3 id="sub2">Spam Classification</h3>
+	<h2 id="subheader"><i>4. Results</i></h2>
 		<h3 id="sub2">Naive Bayes </h3>
 		<h3 id="sub2">Bert Model </h3>
 		<img style="width: 500px;" src="img2.png"/>
-	<h2 id="subheader"><i>4. Results</i></h2>
 	<h2 id="subheader"><i>5. Conclusion</i></h2>
+
+    <h2 id="subheader"><i> Code Documentation </i></h2>
+		<h3 id="sub2">Installation</h3>
+        <p>Install the requirements.yaml to your conda env to run all the code in this project.</p>
+        <code> conda env update -b my_env --file requirements.yaml</code>
+		<h3 id="sub2">Classification</h3>
+        <p> To train the Bert model, run <code> python train.py</code>. To test the bert model, update the variable 'text' in test.py and execute <code> python train.py </code>. The model weights are located in the 'results' folder.
+        To train and run the Naive Bayes model, please go into the 'Research.ipynb' file and execute all blocks of code. </p>
+
+
 	</div>
 </body>
 </html>
