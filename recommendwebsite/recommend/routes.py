@@ -22,3 +22,7 @@ def hotel(query):
 @app.route('/report')
 def report():
     return render_template("ourproject.html")
+
+if __name__ == '__main__':
+# Map command line arguments to function arguments.
+    app.run(host='127.0.0.1',port='8080',debug=True)

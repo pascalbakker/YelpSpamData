@@ -93,8 +93,8 @@
                 <li> Star Rating </li>
             </ul>
         </p>
-        <img style="width: 500px;margin-bottom: 50px;" src="{{url_for('static', filename='img0.png')}}" />
-        <img style="width: 500px;" src="{{url_for('static', filename='img1.png')}}" />
+        <img style="width: 500px;margin-bottom: 50px;" src="/static/img0.png" />
+        <img style="width: 500px;" src="/static/img1.png" />
         <p> The dataset was split into two seperate documents, one which contained the meta data of the review, and the other which contained the actual text of the reivew. The two documents were merged and all missing data was removed.
             <h2 id="subheader"><i>3. Methodology</i></h2>
             <h3 id="sub2">Spam Classification</h3>
@@ -103,7 +103,7 @@
             <h3 id="sub2">Naive Bayes </h3>
             The dataset had a spam/non spam split of 80/20. The Naive Bayes was unable to get an accuracy above 80%, no better than predicting one class. It was not able to get a precision score for spam labels above 10%.
             <h3 id="sub2">Bert Model </h3>
-            <img style="width: 500px;" src="{{url_for('static', filename='img2.png')}}" />
+            <img style="width: 500px;" src="/static/img2.png" />
             <p> The bert model was much more accurate. Although the the spam precision was low (42%) it was significatnly higher than the other attempeted models. Overall, this model was the best.
                 <h2 id="subheader"><i>5. Conclusion</i></h2>
                 For classification, the best model produced was BERT, with an 87% precision for non spam data and 42% precision for spam data. There is still room for improvement, and the team believes the track in the future to obtain better results will be to utilize
