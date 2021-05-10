@@ -18,3 +18,7 @@ def recommend():
 def hotel(query):
     recommendations= do_recommendation(query)
     return render_template("hotel.html",query=query,tables= recommendations.to_numpy())
+
+@app.route('/report')
+def report():
+    return render_template("ourproject.html")

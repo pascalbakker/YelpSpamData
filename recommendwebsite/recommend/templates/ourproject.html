@@ -1,0 +1,110 @@
+<html lang="en_us">
+	<header>
+		<title> DS Final Project </title>
+	</header>
+<style>
+body{
+	padding-top: 1em;
+	margin: 0 auto;
+	color: white;
+	text-align: center;
+	background: #151515;
+    padding-bottom: 100px;
+}
+#main{
+	max-width: 50em;
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
+}
+#authors{
+
+}
+#title{
+	font-size: 3em;
+	color: coral;
+}
+
+#subtitle{
+	font-size: 2.5em;
+	font-weight: bold;
+	color: coral;
+}
+#subheader{
+	text-align: left;
+	color:gold;
+	font-size: 2em;
+}
+p {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-font-smoothing: antialiased !important;
+  text-rendering: optimizelegibility !important;
+  letter-spacing: .03em;
+  font-size: 1.1em;
+text-indent: 40px;
+  text-align: left;
+}
+#sub2{
+	text-align: left;
+	margin-left: 2em;
+	font-size: 1.5em;
+}
+code{
+    text-align: left;
+    color: lime;
+    background-color: black;
+}
+#link a{
+	color: pink;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 1.3em;
+}
+#link a:visited{
+	color: pink;
+}
+</style>
+<body>
+	<div id="main">
+	<h1 id="title"> Information Retrieval Final Project</h1>
+	<h1 id="subtitle"> Yelp Spam Filter</h1>
+	<h2 id="authors"><i> by Pascal Bakker, Zhiyuan Chen, Merzia Naeem Adamjee </i></h2>
+	<h2 id="subheader"><i>1. Introduction</i></h2>
+	<p> Online product reviews have become an increasingly valuable source for consumers and buyers to make decisions on what to buy or what to eat. And in the age of social media, it has become quite common to fake reviews to either unfairly promote a product or defame it. Such activities are called ‘opinion spam’ and we intend to propose an algorithm that discerns “real” reviews from “spam” and recommends based on those ‘real’ reviews only.  Removing opinion spam can help improve the user experience, and maintain trust between a company and its user. The goal of this project is to understand Yelp’s built-in spam detection and recommendation system and utilize their dataset to propose a modified spam detection system that will make use of modern machine learning techniques.  Once completed our model should retrieve relevant information/items and recommend based on ‘real’ reviews to help Yelp’s  users make better decisions based on authentic data. </p>
+	<h2 id="subheader"><i>2. Dataset</i></h2>
+	<p>
+	Each review contained the following features:
+	<ul style="text-align: left;">
+		<li> Date </li>
+		<li> ReviewID </li>
+		<li> Label </li>
+		<li> Star Rating </li>
+	</ul>
+	</p>
+	<img style="width: 500px;margin-bottom: 50px;" src="img0.png"/>
+	<img style="width: 500px;" src="img1.png"/>
+	<p> The dataset was split into two seperate documents, one which contained the meta data of the review, and the other which contained the actual text of the reivew. The two documents were merged and all missing data was removed.
+	<h2 id="subheader"><i>3. Methodology</i></h2>
+    <h3 id="sub2">Spam Classification</h3>
+	<p>The team decided to start with simple models and work to more complex ones. The team started with Naive Bayes and then began to expirement with neural networks.</p>
+	<h2 id="subheader"><i>4. Results</i></h2>
+		<h3 id="sub2">Naive Bayes </h3>
+		The dataset had a spam/non spam split of 80/20. The Naive Bayes was unable to get an accuracy above 80%, no better than predicting one class. It was not able to get a precision score for spam labels above 10%.
+		<h3 id="sub2">Bert Model </h3>
+		<img style="width: 500px;" src="img2.png"/>
+		<p> The bert model was much more accurate. Although the the spam precision was low (42%) it was significatnly higher than the other attempeted models. Overall, this model was the best.
+	<h2 id="subheader"><i>5. Conclusion</i></h2>
+		For classification, the best model produced was BERT, with an 87% precision for non spam data and 42% precision for spam data. There is still room for improvement, and the team believes the track in the future to obtain better results will be to utilize meta learning with pretrained networks models such as BERT.
+    <h2 id="subheader"><i> Code Documentation </i></h2>
+		<h3 id="sub2">Installation</h3>
+        <p>Install the requirements.yaml to your conda env to run all the code in this project.</p>
+        <code> conda env update -b my_env --file requirements.yaml</code>
+		<h3 id="sub2">Classification</h3>
+        <p> To train the Bert model, run <code> python train.py</code>. To test the bert model, update the variable 'text' in test.py and execute <code> python train.py </code>. The model weights are located in the 'results' folder.
+        To train and run the Naive Bayes model, please go into the 'Research.ipynb' file and execute all blocks of code. </p>
+
+		<p id="link"><a href="https://github.com/pascalbakker/YelpSpamData"> GITHUB LINK TO PROJECT</a></p>
+	</div>
+</body>
+</html>
