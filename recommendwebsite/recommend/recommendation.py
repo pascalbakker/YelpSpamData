@@ -14,10 +14,10 @@ def do_recommendation(texts):
 
     tokenized_query = texts.split(" ")
     doc_scores = bm25.get_scores(tokenized_query)
-    bm25.get_top_n(tokenized_query, review_dataset, n=10)
+    bm25.get_top_n(tokenized_query, review_dataset, n=9)
   
     # find simliar user related to that query request
-    query_bm25 = hotelReview_ds.loc[doc_scores.argsort()[-10:][::-1]]['reviewer_id']
+    query_bm25 = hotelReview_ds.loc[doc_scores.argsort()[-9:][::-1]]['reviewer_id']
     # load vectors for similar users
     similar_users = rating_matrix[rating_matrix.index.isin(query_bm25)]
     print(rating_matrix.index)
@@ -29,7 +29,7 @@ def do_recommendation(texts):
     # order the dataframe
     similar_users_df_ordered = similar_users_df.sort_values(by=['mean'], ascending=False)
     # grab the top n hotels   
-    top_n_hotels = similar_users_df_ordered.head(10)
+    top_n_hotels = similar_users_df_ordered.head(9)
     top_n_hotels_indices = top_n_hotels.index.tolist()
     # lookup these hotels in the other dataframe to find informations
     hotel_info = business_info_ds[business_info_ds['id'].isin(top_n_hotels_indices)]
