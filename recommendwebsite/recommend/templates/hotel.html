@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %} {% endblock %} {% block content %}
+<section class="py-5 text-center container">
+
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light"></h1>
+            <p class="lead text-muted">Recommendation for {{query}}</p>
+        </div>
+    </div>
+</section>
+
+<div class="album py-5 bg-light">
+    <div class="card-group" style="display:flex;">
+        {% for row in tables %}
+        <div class=" card" style="width: 25rem; ">
+            <img class="card-img-top" src="{{row[5]}} " width="225 " height="225 " />
+            <div class=" card-body ">
+                <div class="card-body ">
+                    <p class="card-text ">{{row[4]|safe }}</p>
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <small class="text-muted ">{{row[13]|safe }}</small>
+                        <small class="text-muted ">{{row[17]|safe }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor%}
+    </div>
+</div>{% endblock %}
