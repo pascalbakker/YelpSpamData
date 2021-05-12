@@ -98,12 +98,6 @@
         <p> This data includes 67,395 reviews for a set of hotels and restaurants in the Chicago area. Reviews include product and user information, timestamp, ratings, and a plaintext review. This dataset contains reviews from 201 hotels and restaurants
             by 38,063 reviewers. And it was split into two seperate documents, one which contained the meta data of the review, and the other which contained the actual text of the reivew. The two documents were merged and all missing data was removed.In
             this dataset, there exist 13.23% filtered reviews by 20.33% spammers.</p>
-        <h2 id="subheader"><i>3. Dataset Analysis</i></h2>
-        <h3 id="sub2">Word Cloud</h3>
-        <img style="width: 500px;" src="/static/most_common_wordcloud.png" />
-        <img style="width: 500px;" src="/static/rare_word.png" />
-        <h3 id="sub2">Nltk Trigram analysis</h3>
-        <p>Top</p>
         <h2 id="subheader"><i>3. Methodology</i></h2>
         <h3 id="sub2">Spam Classification</h3>
         <p>The team decided to start with simple models and work to more complex ones. The team started with Naive Bayes and then began to expirement with neural networks.</p>
@@ -117,6 +111,9 @@
         <h3 id="sub2">Bert Model </h3>
         <img style="width: 500px;" src="/static/img2.png" />
         <p> The bert model was much more accurate. Although the the spam precision was low (42%) it was significatnly higher than the other attempeted models. Overall, this model was the best.</p>
+        <h3 id="sub2">Recommend system model</h3>
+        <img style="width: 500px;" src="/static/results.png" />
+        <p>For a query such as "downtown area", the recommend system retrieval back some Chicago hotels with reviews greatly associated with downtown, great lcoation and convenient. </p>
         <h2 id="subheader"><i>5. Conclusion</i></h2>
         For spam opinions analysis, based on the bigram and word count retrieved from spam samples, we find that Non-spam review is more focused on location (most important factor), economy efficiency and services whereas more marketing terms appear in Spam review
         such as “recommend to anyone”, “would stay” and advertise the name of the business. For classification, the best model produced was BERT, with an 87% precision for non spam data and 42% precision for spam data. There is still room for improvement,
