@@ -1,6 +1,7 @@
 from recommend import app
 from flask import request,Flask,redirect,url_for,render_template
 from recommend.recommendation import do_recommendation
+
 @app.route('/')
 @app.route('/index')
 def index():

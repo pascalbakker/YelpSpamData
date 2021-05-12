@@ -11,16 +11,13 @@ def do_recommendation(texts):
     review_dataset = pickle.load(open("review_data.bin", "rb"))
 
     bm25 = BM25Okapi(tokenzied_review)
-
     tokenized_query = texts.split(" ")
     doc_scores = bm25.get_scores(tokenized_query)
     bm25.get_top_n(tokenized_query, review_dataset, n=9)
-  
     # find simliar user related to that query request
     query_bm25 = hotelReview_ds.loc[doc_scores.argsort()[-9:][::-1]]['reviewer_id']
     # load vectors for similar users
     similar_users = rating_matrix[rating_matrix.index.isin(query_bm25)]
-    print(rating_matrix.index)
     # calc avg ratings across the similar users
     similar_users = similar_users.mean(axis=0)
     # convert to dataframe so its easy to sort and filter
